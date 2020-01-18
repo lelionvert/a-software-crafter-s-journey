@@ -50,8 +50,7 @@
             }
         },
         mounted: function () {
-            if (this.articleData != null)
-                this.article = this.articleData;
+
         }
     }
 </script>
