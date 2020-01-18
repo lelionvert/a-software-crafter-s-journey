@@ -68,9 +68,3 @@
     }
   }
 </script>
-
-<style>
-  .logo {
-
-  }
-</style>
