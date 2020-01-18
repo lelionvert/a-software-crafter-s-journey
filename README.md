@@ -42,7 +42,7 @@
 
 ``` bash
 # clone this repository
-$ git clone https://github.com/ismailnguyen/a-software-crafter-s-journey.git
+$ git clone https://github.com/lelionvert/a-software-crafter-s-journey.git
 
 # install dependencies
 $ npm install # Or yarn install
