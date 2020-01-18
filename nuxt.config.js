@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "A Software Crafter's Journey - La Combe du Lion Vert",
+    title: "A Software Crafter's Journey",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui' },
@@ -50,7 +50,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-      
+
       config.module.rules.push({
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader'
