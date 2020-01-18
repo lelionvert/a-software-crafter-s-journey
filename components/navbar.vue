@@ -17,23 +17,6 @@
 
     <div class="navbar-menu" v-bind:class="{ 'is-active': isNavbarMenuOpened }">
       <div class="navbar-start">
-        <!-- <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            Tags
-          </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              Soft skills
-            </a>
-            <a class="navbar-item">
-              Méthodologie
-            </a>
-            <a class="navbar-item">
-              Bonne pratique
-            </a>
-          </div>
-        </div> -->
       </div>
 
       <div class="navbar-end">
