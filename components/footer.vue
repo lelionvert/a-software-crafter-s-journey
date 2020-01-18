@@ -4,7 +4,7 @@
         <div class="content has-text-centered">
             &copy;
             <br>
-            <small>A Software Crafter's Journey</small> <strong>x</strong> <small>La Combe du Lion Vert</small>
+            <small>A Software Crafter's Journey</small>
         </div>
     </footer>
 </template>
