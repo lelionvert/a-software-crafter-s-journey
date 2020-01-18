@@ -6,7 +6,7 @@
             A Software Crafter's Journey
           </h1>
         </a>
-        
+
 
       <a class="navbar-burger burger" aria-label="menu" aria-expanded="false" v-on:click="openMenu()" v-bind:class="{ 'is-active': isNavbarMenuOpened }">
         <span aria-hidden="true"></span>
@@ -58,7 +58,7 @@
       return {
         isNavbarMenuOpened: false,
         aboutUsLink: 'http://la-combe-du-lion-vert.fr/',
-        contributionLink: 'https://github.com/ismailnguyen/a-software-crafter-s-journey/tree/master/articles'
+        contributionLink: 'https://github.com/lelionvert/a-software-crafter-s-journey/'
       }
     },
     methods: {
