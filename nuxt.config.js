@@ -1,7 +1,7 @@
 import glob from 'glob'
 
-let files = glob.sync('**/*.md', { cwd: 'articles' })
-files = files.map(file => file.substr(0, file.lastIndexOf('.')))
+let files = glob.sync('**/*.md', { cwd: 'articles' });
+files = files.map(file => file.substr(0, file.lastIndexOf('.')));
 
 module.exports = {
   /*
