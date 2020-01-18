@@ -1,11 +1,11 @@
 ---
-title: Article test
+title: Article test 2
 author: Fake
-published_date: 23 Avril 2018
+published_date: 23042018
 description: Il s’agit d’un test d’article à publier
 tags: Fake, VueJS, Markdown
 ---
-# Test article
+# Test article 2
 
 Il s’agit d’un test d’article à publier
 
