@@ -59,18 +59,3 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
-## Todo
-
-### Pagination
-- Show only a limited number of article per page
-- Add pagination module to show more articles
-
-### Search
-- Add a search bar to filter displayed articles corresponding to the search query
-
-### Filter
-- Only show articles corresponding to user's selected tag
-
-### Comments
-- Add a comments section for each article
