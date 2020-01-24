@@ -3,7 +3,7 @@
         <Navbar/>
         <nuxt/>
         <Footer/>
-        <script defer src="https://www.ismailnguyen.com/resources/js/vendor/fontawesome.js"></script>
+        <script defer src="https://friconix.com/cdn/friconix.js"> </script>
     </div>
 </template>
 

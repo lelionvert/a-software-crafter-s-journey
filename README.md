@@ -14,7 +14,7 @@
 [Mastering Markdown - Github Guides](https://guides.github.com/features/mastering-markdown/)*
 
 ### Publish on the blog
-- **Fork** the repository (https://github.com/ismailnguyen/a-software-crafter-s-journey)
+- **Fork** the repository (https://github.com/lelionvert/a-software-crafter-s-journey)
 - Checkout a branch (eg. `article/you-article-name`)
 - **Add** your article (markdown file) in the `articles` folder
     - Add meta datas on top of your markdown file within 3 dashs (Mandatory for the article to be visible on the home page)
@@ -34,7 +34,7 @@
         - A folder to indicate the year of publication
         - A second folder to indicate the month of publication
 - **Commit** your changes into your branch
-- Make a **pull request** from your forked branch into `master` (https://github.com/ismailnguyen/a-software-crafter-s-journey/compare)
+- Make a **pull request** from your forked branch into `master` (https://github.com/lelionvert/a-software-crafter-s-journey/compare)
 - Wait for **merge approval**, then **merge** on `master`
 - The changes will be automatically deployed (through a git hooks within the web server)
 
