@@ -60,11 +60,11 @@
                         404
                     </h1>
                     <h2 class="subtitle">
-                        Oups, l'article demand&eacute; n'existe pas !
+                        Oops, this blog article is missing !
                     </h2>
                     <h3>
                         <nuxt-link to="/">
-                            Retour &agrave; l'accueil
+                            Back to articles
                         </nuxt-link>
                     </h3>
                 </div>
@@ -114,8 +114,8 @@
         },
         data () {
             return {
-                goBackLabel: 'Retour aux articles',
-                publishedByLabel: 'par '
+                goBackLabel: 'Back to articles',
+                publishedByLabel: 'by '
             }
         },
         head () {

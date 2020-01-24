@@ -46,7 +46,7 @@
         },
         data () {
             return {
-                publishedByLabel: 'par '
+                publishedByLabel: 'by '
             }
         },
         mounted: function () {

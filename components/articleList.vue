@@ -59,7 +59,7 @@
         data() {
             return {
                 searchInput: "",
-                lastArticlesTitle: 'Derniers articles'
+                lastArticlesTitle: 'Last articles'
             }
         },
         methods: {
