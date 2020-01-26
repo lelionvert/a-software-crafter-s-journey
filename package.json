@@ -2,7 +2,7 @@
   "name": "crafter-journey",
   "version": "1.0.0",
   "description": "A Software Crafter's Journey",
-  "author": "Ismaïl NGUYEN",
+  "author": "La combe du Lion Vert",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

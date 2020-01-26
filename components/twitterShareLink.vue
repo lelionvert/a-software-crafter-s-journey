@@ -1,7 +1,7 @@
 <template>
     <a class="level-item" aria-label="like" :href="twitterShareUrl" target="_blank">
         <span class="icon is-small">
-            <i class="fab fa-twitter" aria-hidden="true"></i>
+            <i class="fab fa-twitter" aria-hidden="true"/>
         </span>
         &nbsp;
         <span v-if="showLabel">
@@ -13,7 +13,7 @@
 <script>
     export default {
         props: {
-            article: { type: Object}, 
+            article: { type: Object},
             showLabel: { type: Boolean, default: true }
         },
         data () {
