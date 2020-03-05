@@ -1,9 +1,10 @@
 <template>
         <section v-if="article" class="section has-background-light">
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
             <div class="container is-widescreen">
-                
+
                 <nuxt-link to="/" class="button is-danger is-light is-hidden-touch">{{ goBackLabel }}</nuxt-link>
-                
+
                 <h1 class="title has-text-centered">{{ article.title }}</h1>
 
                 <p class="subtitle is-6 has-text-centered">
@@ -36,7 +37,7 @@
 
                                     <div v-html="article.content" class="has-text-justified"></div>
                                 </div>
-                                
+
                                 <nav class="level is-mobile">
                                     <div class="level-left">
                                         <Tags :article="article" />
@@ -49,7 +50,7 @@
                         </div>
                     </article>
                 </div>
-                
+
             </div>
         </section>
 
@@ -82,10 +83,10 @@
             Tags
         },
         async asyncData({ route }) {
-            try {  
+            try {
                 const fileName = `${ route.path }.md`;
                 const fileContent = await import(`~/articles${fileName}`);
-                        
+
                 return {
                     article: {
                         title: fileContent.attributes.title,
