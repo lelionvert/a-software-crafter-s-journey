@@ -71,6 +71,7 @@ module.exports = {
       })
     }
   },
+  css: ['syntax.css'],
   modules: [
       '@nuxtjs/bulma',
       '@nuxtjs/sitemap'

@@ -1,6 +1,5 @@
 <template>
         <section v-if="article" class="section has-background-light">
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github-gist.min.css">
             <div class="container is-widescreen">
 
                 <nuxt-link to="/" class="button is-danger is-light is-hidden-touch">{{ goBackLabel }}</nuxt-link>
