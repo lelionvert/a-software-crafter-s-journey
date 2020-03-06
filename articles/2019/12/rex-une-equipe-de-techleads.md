@@ -4,6 +4,7 @@ author: Ubald de Bellabre
 published_date: 17 Décembre 2019
 description: Retour d'expérience de l'organisation d'une équipe résiliente.
 tags: Agilité, Organisation, Techlead
+author_link: https://example.com
 ---
 
 J'ai eu l'occasion de travailler dans une équipe avec une organisation particulière qui m'a ouvert les yeux sur 
