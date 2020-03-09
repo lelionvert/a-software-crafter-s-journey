@@ -8,7 +8,7 @@
 
                 <p class="subtitle is-6 has-text-centered">
                     <small>
-                        {{ publishedByLabel }} {{ article.author }}
+                        {{ publishedByLabel }} <a :href="article.author_link" target="_blank">{{ article.author }}</a>
                         -
                         <time :datetime="article.published_date">{{ article.published_date }}</time>
                     </small>
@@ -90,6 +90,7 @@
                     article: {
                         title: fileContent.attributes.title,
                         author: fileContent.attributes.author,
+                        author_link: fileContent.attributes.author_link,
                         published_date: fileContent.attributes.published_date,
                         description: fileContent.attributes.description,
                         tags: fileContent.attributes.tags.split(','),

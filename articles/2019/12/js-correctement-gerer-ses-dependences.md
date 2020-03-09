@@ -4,6 +4,7 @@ author: Ubald de Bellabre
 published_date: 17 Décembre 2019
 description: Un tuto de survie pour faire ses premiers sur un projet en JavaScript
 tags: JavaScript, Dependency Management, Development Tips
+author_link: https://example.com
 ---
 
 ## TL;DR

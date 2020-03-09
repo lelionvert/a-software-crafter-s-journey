@@ -4,6 +4,7 @@ author: Jordan Nourry
 published_date: 29 Mai 2018
 description: Tout le monde revient de la Devoxx France avec des étoiles plein les yeux. Après cette 7ème édition, tous les développeurs reviennent avec un tas d’idées de refactoring qui vont changer la face du monde. Les projets du bassin parisien n’ont qu’à bien se tenir !!
 tags: Devoxx, Futur, France, Code, Engineering
+author_link: https://example.com
 ---
 
 ![https://miro.medium.com/max/500/0*Ddc3LeRLHVWCsdHZ.](https://miro.medium.com/max/500/0*Ddc3LeRLHVWCsdHZ.)

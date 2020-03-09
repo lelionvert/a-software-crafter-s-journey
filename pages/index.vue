@@ -16,10 +16,10 @@
         let fileName = articleFile.substr(2, articleFile.length);
 
         const fileContent = await import(`~/articles/${fileName}`);
-            
         articles.push({
             title: fileContent.attributes.title,
             author: fileContent.attributes.author,
+            author_link: fileContent.attributes.author_link,
             published_date: fileContent.attributes.published_date,
             description: fileContent.attributes.description,
             tags: fileContent.attributes.tags.split(','),
