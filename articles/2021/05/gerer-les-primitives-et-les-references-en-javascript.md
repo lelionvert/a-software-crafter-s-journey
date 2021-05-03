@@ -4,7 +4,7 @@ author: Ghassen ASKRI
 published_date: 03 Mai 2021
 description: Cet article a pour objectif de comprendre la différence entre ces deux variables en javascript
 ---
-##Gérer les primitives et les références en JavaScript 
+# Gérer les primitives et les références en JavaScript 
 
 Lors de l'écriture des programmes, il est souvent nécessaire d'avoir des variables pour nous permettre de stocker des valeurs.  
 
@@ -23,15 +23,15 @@ La Heap, quant à elle, est une région beaucoup plus grande où tout est allo
 
 ![title](images/pic-01.png)
 
-###Gérer des Primitives  
+## Gérer des Primitives  
 
 La figure ci-dessus montre que toutes les primitives sont stockées avec leurs valeurs dans la Stack.  
 
 Mettons à présent cela en pratique : 
 ```javascript
-let firstPrimitive = 9;
+var firstPrimitive = 9;
 
-let secondPrimitive  = firstPrimitive ;
+var secondPrimitive  = firstPrimitive ;
 
 console.log('the second primitive equal to : '+ secondPrimitive);
 ```
@@ -43,9 +43,9 @@ Dans le code au sein du lien ci-dessus, une opération d'affectation sur les pri
 Maintenant si l’on change la valeur de la première primitive "firstPrimitive", la deuxième primitive sera-t-elle affectée ? Rien ne change puisqu'il existe une copie par valeur au niveau de la Stack.  
 
 ```javascript
-let firstPrimitive = 9;
+var firstPrimitive = 9;
 
-let secondPrimitive  = firstPrimitive ; 
+var secondPrimitive  = firstPrimitive ; 
 
 console.log('the second primitive equal to : '+ secondPrimitive);
 
@@ -64,9 +64,9 @@ La plupart des développeurs junior savent qu'une simple affectation ne peut rie
 Commençons par une déclaration simple de deux références. Nous découvrirons ensuite l’impact sur la Stack et nous pourrons mieux comprendre les manipulations.  
 
 ```javascript
-let firstReference = {lat:-34.397, lng:150.644};  
+var firstReference = {lat:-34.397, lng:150.644};  
 
-let secondReference = firstReference ;  
+var secondReference = firstReference ;  
 ```
 ![title](images/pic-03.png)
 
@@ -74,9 +74,9 @@ let secondReference = firstReference ; 
 
 Pour avoir accès à notre objet, il faut pointer sur sa référence. Au niveau de la Stack, il existe une copie par référence et les deux objets pointent sur la même référence. Cela entraine un changement de valeur dans le premier objet si le deuxième objet a été modifié et vice-versa puisque les deux objets partagent la même référence.  
 ```javascript
-let firstReference = {lat:-34.397, lng:150.644};
+var firstReference = {lat:-34.397, lng:150.644};
 
-let secondReference = firstReference ; 
+var secondReference = firstReference ; 
 
 secondReference.lng = 0.000;
 
@@ -100,9 +100,9 @@ Deux solutions classiques s’offrent à nous pour ne pas utiliser la même r�
 Nous aurons au final un nouvel objet ”secondReference”  au niveau de la mémoire Heap et une nouvelle référence différente de celle du "firstRefrence" au niveau de la Stack.  
 
 ```javascript
-let firstReference = {lat:-34.397, lng:150.644};
+var firstReference = {lat:-34.397, lng:150.644};
 
-let secondReference = Object.assign({},firstReference); 
+var secondReference = Object.assign({},firstReference); 
 
 firstReference.lng = 0.000;
 
@@ -113,12 +113,12 @@ https://jsfiddle.net/fan7vxqk/1/ 
 
 C'est donc très simple ! Pour faire une copie d'un objet, il suffit de faire "Object.assign({},oldObject)" et le tour est joué !   
 
-###Gérer l'imbrication des références 
+## Gérer l'imbrication des références 
 ```javascript
-let firstReference = 
+var firstReference = 
 {lat:-34.397, lng:150.644, pays:['france','italie','allemagne']};
 
-let secondReference = Object.assign({},firstReference); 
+var secondReference = Object.assign({},firstReference); 
 
 secondReference.lng = 0.000;
 
@@ -143,20 +143,49 @@ La méthode assign() ne présente pas la meilleure solution car elle ne gère 
 
 Pour faire une copie complète et gérer l’imbrication, il y a trois solutions possibles:  
 
-- Faire un clonage superficiel en utilisant la standardisation ECMAScript 2018 const clone = {...original} Attention, l'expression n'est pas encore supportée par tous les navigateurs et pourrait engendrer des erreurs pour votre loader comme BabelLoader ! 
+1. Faire un clonage superficiel en utilisant la standardisation ECMAScript 2018 (Spread syntax)
 
-- Utiliser la librairie lodash : import * as _ from 'lodash'; myObjCopy=_.cloneDeep(myObj);  
+    ```javascript
+    var clone = {...original}
+    ```
+    Ci-desous l'implémentation de notre exemple en utilisant le "Spread syntax"
+    ```javascript
+    var firstReference = {lat:-34.397, lng:150.644, pays:['france','italie','allemagne']}
+    var secondReference = {...firstReference}
+    secondReference.pays.push('russie')
+    console.log(firstReference.pays) // ['france','italie','allemagne']
+    console.log(secondReference.pays) // ['france','italie','allemagne', 'russie']
+    ```
+    Parconte la méthode "push()" pourra engendrer des problèmatiques parce qu'elle fait muter les variables.</br>
+    Ci-desous une nouvelle implémentation sans utiliser la méthode "push()".
+    ```javascript
+    var firstReference = {lat:-34.397, lng:150.644, pays:['france','italie','allemagne']}
+    var secondReference = {
+        ...firstReference,
+        pays: [...firstReference.pays, 'russie']
+    }
+    console.log(firstReference.pays) // ['france','italie','allemagne']
+    console.log(secondReference.pays) // ['france','italie','allemagne', 'russie']
+    ```
+    Attention, l'expression n'est pas encore supportée par tous les navigateurs et pourrait engendrer des erreurs pour votre loader comme BabelLoader ! 
 
-- Faire parcourir l'objet original : il ne faut jamais oublier que lorsque votre objet original ne contient aucune référence, la méthode Object.assign() est la plus pratique.
+2. Utiliser la librairie lodash.
+    ```javascript
+    import * as _ from 'lodash'; 
+    myObjCopy=_.cloneDeep(myObj);  
+    ```
 
-Références :
+3. Faire parcourir l'objet original.</br>
+    Il ne faut jamais oublier que lorsque votre objet original ne contient aucune référence, la méthode Object.assign() est la plus pratique.</br>
+    Attention, l'ordre des paramètres de la méthode "Object.assign()" doivent etre respectés.
 
+### Références :
 - Stack vs Heap: https://www.quora.com/What-is-the-dif...  
 
 - Object.assign(): https://developer.mozilla.org/en-US/d...  
 
 - Lodash Clone Deep: https://lodash.com/docs/#cloneDeep  
 
-- Spread Properties for ECMAScript :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax  
+- Spread Properties for ECMAScript :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
 
