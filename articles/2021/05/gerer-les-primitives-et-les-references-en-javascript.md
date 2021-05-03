@@ -116,30 +116,31 @@ C'est donc très simple ! Pour faire une copie d'un objet, il suffit de faire�
 ## Gérer l'imbrication des références 
 ```javascript
 var firstReference = 
-{lat:-34.397, lng:150.644, pays:['france','italie','allemagne']};
+{lat:-34.397, lng:150.644, countries:['france','italie','allemagne']};
 
 var secondReference = Object.assign({},firstReference); 
 
 secondReference.lng = 0.000;
 
-secondReference.pays.push("peche");
+secondReference.countries.push("russie");
 
 console.log('secondLng ', secondReference.lng);
 console.log('firstLng ', firstReference.lng);
-console.log('scondFruitsReference', secondReference.pays); 
-console.log('firstFruitsReference', secondReference.pays); 
+console.log('scondCountriesReference', secondReference.countries); 
+console.log('firstCountriesReference', secondReference.countries); 
 ``` 
-https://jsfiddle.net/fan7vxqk/2/ 
+https://jsfiddle.net/a7nezyd5/
 
 Dans l'exemple ci-dessus, nous avons cherché à construire un premier objet "firstReference". Celui-ci a ensuite été copié dans un deuxième objet "secondReference" en utilisant la méthode assign(). 
 
 Nous avons ensuite modifié les deux attributs en passant par le deuxième objet “secondReference”.  
 
-Cette modification n’a pas eu d’impact sur l’attribut “lng” qui est resté inchangé tandis que l’attribut fruits a été impacté et sa valeur a été modifié. 
+Cette modification n’a pas eu d’impact sur l’attribut “lng” qui est resté inchangé tandis que l’attribut countries a été impacté et sa valeur a été modifié. 
 
-On peut conclure que la méthode assign() ne pourra pas gérer l'imbrication des références tout simplement parce que l'attribut "pays" est de type tableau (référence).  
+On peut conclure que la méthode "assign()" ne pourra pas gérer l'imbrication des références tout simplement parce que l'attribut "countries" est de type tableau (référence) et la méthode "push()" engendre la mutation des variables.  
 
-La méthode assign() ne présente pas la meilleure solution car elle ne gère pas l'imbrication des références.
+La méthode "assign()" ne présente pas la meilleure solution car elle ne gère pas l'imbrication des références.
+
 
 Pour faire une copie complète et gérer l’imbrication, il y a trois solutions possibles:  
 
@@ -150,29 +151,23 @@ Pour faire une copie complète et gérer l’imbrication, il y a trois solutions
     ```
     Ci-desous l'implémentation de notre exemple en utilisant le "Spread syntax"
     ```javascript
-    var firstReference = {lat:-34.397, lng:150.644, pays:['france','italie','allemagne']}
-    var secondReference = {...firstReference}
-    secondReference.pays.push('russie')
-    console.log(firstReference.pays) // ['france','italie','allemagne']
-    console.log(secondReference.pays) // ['france','italie','allemagne', 'russie']
-    ```
-    Parconte la méthode "push()" pourra engendrer des problèmatiques parce qu'elle fait muter les variables.</br>
-    Ci-desous une nouvelle implémentation sans utiliser la méthode "push()".
-    ```javascript
-    var firstReference = {lat:-34.397, lng:150.644, pays:['france','italie','allemagne']}
+    var firstReference = {lat:-34.397, lng:150.644, countries:['france','italie','allemagne']}
     var secondReference = {
         ...firstReference,
-        pays: [...firstReference.pays, 'russie']
+        countries: [...firstReference.countries, 'russie']
     }
-    console.log(firstReference.pays) // ['france','italie','allemagne']
-    console.log(secondReference.pays) // ['france','italie','allemagne', 'russie']
+    console.log(firstReference.countries) // ['france','italie','allemagne']
+    console.log(secondReference.countries) // ['france','italie','allemagne', 'russie']
     ```
-    Attention, l'expression n'est pas encore supportée par tous les navigateurs et pourrait engendrer des erreurs pour votre loader comme BabelLoader ! 
+
+    
+
+    Attention,l'expression n'est pas encore supportée par tous les navigateurs et pourrait engendrer des erreurs pour votre loader comme BabelLoader ! 
 
 2. Utiliser la librairie lodash.
     ```javascript
     import * as _ from 'lodash'; 
-    myObjCopy=_.cloneDeep(myObj);  
+    myObjCopy = _.cloneDeep(myObj);  
     ```
 
 3. Faire parcourir l'objet original.</br>
