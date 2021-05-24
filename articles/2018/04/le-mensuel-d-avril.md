@@ -1,7 +1,7 @@
 ---
 title: Le mensuel d’Avril
 author: Jean-François VO
-published_date: 23 Avril 2018
+published_date: 2018-04-23
 description: Dans cette revue de presse, parcourons ensemble les articles impactants pour le développement web Front-end. Regardons également des articles courts, mais utiles, sur les designs patterns, le design et cultivons ensemble notre fibre artistique :)
 tags: JavaScript, Design Patterns, Development, Development Tips
 ---
