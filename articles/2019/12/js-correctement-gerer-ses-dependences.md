@@ -1,7 +1,7 @@
 ---
 title: Correctement gérer ses dépendances en Javascript
 author: Ubald de Bellabre
-published_date: 17 Décembre 2019
+published_date: 2019-12-17
 description: Un tuto de survie pour faire ses premiers sur un projet en JavaScript
 tags: JavaScript, Dependency Management, Development Tips
 ---
