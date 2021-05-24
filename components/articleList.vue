@@ -4,12 +4,9 @@
 
       <h1 class="title">{{ lastArticlesTitle }}</h1>
 
-      <div class="columns is-centered" v-for="(article, i) in articles" :key="i" v-if="i % 2 == 0">
-        <div class="column">
-          <Article :article="article" />
-        </div>
-        <div class="column" v-if="articles[i+1]">
-          <Article :article="articles[i+1]" />
+      <div class="columns is-centered is-multiline">
+        <div class="column is-half" v-for="(article, i) in sorted_articles" :key="i">
+          <Article :article="article"/>
         </div>
       </div>
 
@@ -18,17 +15,26 @@
 </template>
 
 <script>
-  import Article from '~/components/articleCard.vue'
+import Article from '~/components/articleCard.vue'
 
-  export default {
-    props: ['articles'],
-    components: {
-      Article
-    },
-    data () {
-      return {
-        lastArticlesTitle: 'Derniers articles'
-      }
-    },
-  }
+export default {
+  props: ['articles'],
+  components: {
+    Article
+  },
+  computed: {
+    sorted_articles() {
+      let articles = this.articles.slice(0);
+      articles.sort(function (a1, a2) {
+        return a2.published_date - a1.published_date
+      });
+      return articles;
+    }
+  },
+  data() {
+    return {
+      lastArticlesTitle: 'Derniers articles'
+    }
+  },
+}
 </script>
