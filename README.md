@@ -1,48 +1,22 @@
-# A Software Crafter's Journey
+# La Combe Du Lion Vert - Core Blog
 
-> Blog, NuxtJS, VueJS, Markdown
+Ce dépôt contient le coeur du blog de La Combe Du Lion Vert.
 
-## How to post a new article
+Ce moteur est donc utilisable afin de réaliser votre propre blog, rapidement.
 
-### Create your blog post
-- Create a markdown file
-  - with `.md` extension
-  - use `-` instead of space (eg. `your-article-name.md`)
-- Write your blog post into the previously created markdown file
+## Contribution
 
-*See more on markdown format :
-[Mastering Markdown - Github Guides](https://guides.github.com/features/mastering-markdown/)*
+Merci de votre intérêt ! Si vous souhaitez contribuer au dépôt :
 
-### Publish on the blog
-- **Fork** the repository (https://github.com/ismailnguyen/a-software-crafter-s-journey)
-- Checkout a branch (eg. `article/you-article-name`)
-- **Add** your article (markdown file) in the `articles` folder
-    - Add meta datas on top of your markdown file within 3 dashs (Mandatory for the article to be visible on the home page)
-        - Available meta datas: title, author, published_date, description, tags
-          - tags should be separated with commas
-        - Example :
-        ```
-        ---
-        title: Ton Code fait partie du patrimoine culturel
-        author: Jordan Nourry
-        published_date: 29 Mai 2018
-        description: Tout le monde revient de la Devoxx France avec des étoiles plein les yeux. Après cette 7ème édition, tous les développeurs reviennent avec un tas d’idées de refactoring qui vont changer la face du monde. Les projets du bassin parisien n’ont qu’à bien se tenir !!
-        tags: Devoxx, Futur, France, Code, Engineering
-        ---
-        ```
-    - (Recommended) Put your article file into subfolders (eg. `~/articles/2019/12/your-article-name.md`)
-        - A folder to indicate the year of publication
-        - A second folder to indicate the month of publication
-- **Commit** your changes into your branch
-- Make a **pull request** from your forked branch into `master` (https://github.com/ismailnguyen/a-software-crafter-s-journey/compare)
-- Wait for **merge approval**, then **merge** on `master`
-- The changes will be automatically deployed (through a git hooks within the web server)
+- Pour réaliser un article pour le blog de La Combe Du Lion Vert : merci de faire une Pull Request sur
+  le [dépôt du blog de La Combe Du Lion Vert](https://github.com/lelionvert/blog-articles)
+- Pour introduire de nouvelles fonctionnalités au moteur : merci de lire le fichier [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Build Setup
 
 ``` bash
 # clone this repository
-$ git clone https://github.com/lelionvert/a-software-crafter-s-journey.git
+$ git clone https://github.com/lelionvert/blog-core.git
 
 # install dependencies
 $ npm install # Or yarn install
@@ -59,3 +33,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+## Crédits
+
+Immense merci à [Ismail Nguyen](https://github.com/ismailnguyen), qui a développé la base de ce blog, duquel ce moteur est forké !
