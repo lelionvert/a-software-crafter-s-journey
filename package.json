@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.6",
-    "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/sitemap": "^2.0.1",
     "frontmatter-markdown-loader": "^3.1.0",
     "glob": "^7.1.6",
@@ -23,9 +23,9 @@
   "devDependencies": {
     "@nuxt/types": "^2.15.6",
     "babel-eslint": "^10.0.1",
-    "eslint": "^4.19.1",
+    "eslint": "^7.28.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-vue": "^7.10.0"
   }
 }
