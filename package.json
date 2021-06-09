@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.6",
-    "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/markdownit": "^2.0.0",
     "@nuxtjs/sitemap": "^2.0.1",
     "frontmatter-markdown-loader": "^3.1.0",
     "glob": "^7.1.6",
